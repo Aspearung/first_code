@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define element int
 #define maxsize 4
-
+//commit needs
 typedef struct stack{
     element top;
     element bottom;
@@ -17,9 +17,9 @@ void stack_first(stack *ung){
 }
 
 void push(stack *ung,element value){
-    printf("%d¸¦ ½ºÅÃ¿¡ ³Ö°Ú½À´Ï´Ù.\n",value);
+    printf("%dë¥¼ ìŠ¤íƒì— ë„£ê² ìŠµë‹ˆë‹¤.\n",value);
     if(ung->top >= 5){
-        printf("¸Ş¸ğ¸® ¿À¹öÇÃ·Î¿ì!\n");
+        printf("ë©”ëª¨ë¦¬ ì˜¤ë²„í”Œë¡œìš°!\n");
     }
     else{
         ung->data[ung->top] = value;
@@ -29,7 +29,7 @@ void push(stack *ung,element value){
 
 void pop(stack *ung){
     if(ung->top < 0){
-        printf("¸Ş¸ğ¸® ¾ğ´õÇÃ·Î¿ì!\n");
+        printf("ë©”ëª¨ë¦¬ ì–¸ë”í”Œë¡œìš°!\n");
     }
     else{
         ung->data[--ung->top];
@@ -49,31 +49,31 @@ int main(void){
     stack_first(&ung);
 
     while(1){
-        printf("\n1.»ğÀÔ 2.»èÁ¦  3.Ãâ·Â : ");
+        printf("\n1.ì‚½ì… 2.ì‚­ì œ  3.ì¶œë ¥ : ");
         scanf("%d",&user);
         switch(user){
             case 1:{
-                printf("ÀÔ·ÂÇÏ½Å ¼ö¸¦ ½ºÅÃ¿¡ ³Ö½À´Ï´Ù.\n");
-                printf("ÀÔ·Â : ");
+                printf("ì…ë ¥í•˜ì‹  ìˆ˜ë¥¼ ìŠ¤íƒì— ë„£ìŠµë‹ˆë‹¤.\n");
+                printf("ì…ë ¥ : ");
                 scanf("%d",&value);
                 push(&ung,value);
                 break;
             }
 
             case 2:{
-                printf("topÀ§Ä¡¿¡ ÀÖ´Â °ªÀ» »èÁ¦ÇÕ´Ï´Ù.\n");
+                printf("topìœ„ì¹˜ì— ìˆëŠ” ê°’ì„ ì‚­ì œí•©ë‹ˆë‹¤.\n");
                 pop(&ung);
                 break;
             }
 
             case 3:{
-                printf("ÇöÀç ½ºÅÃÀ» Ãâ·ÂÇÕ´Ï´Ù.\n");
+                printf("í˜„ì¬ ìŠ¤íƒì„ ì¶œë ¥í•©ë‹ˆë‹¤.\n");
                 print_stack(&ung);
                 break;
             }
 
             default :{
-                printf("Àß¸øµÈ ÀÔ·ÂÀ¸·Î Á¾·áÇÕ´Ï´Ù!\n");
+                printf("ì˜ëª»ëœ ì…ë ¥ìœ¼ë¡œ ì¢…ë£Œí•©ë‹ˆë‹¤!\n");
                 break;
             }
 
